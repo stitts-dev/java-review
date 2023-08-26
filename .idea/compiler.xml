@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="collection-review" />
         <module name="oop-review" />
+        <module name="streams" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
