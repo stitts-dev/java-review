@@ -94,44 +94,54 @@ public class Practice {
 
     // Display all the countries' names
     public static List<String> getAllCountryNames() {
-        //TODO Implement the method
-        return new ArrayList<>();
+//        return getAllCountries().stream()
+//                .map(Country::getCountryName)
+//                .collect(Collectors.toList());
+        return getAllCountries().stream()
+                .map(country -> country.getCountryName())
+                .collect(Collectors.toList());
     }
 
     // Display all the departments' managers' first names
     public static List<String> getAllDepartmentManagerFirstNames() {
-        //TODO Implement the method
-        return new ArrayList<>();
+        return getAllDepartments().stream()
+                .map(department -> department.getManager().getFirstName())
+                .collect(Collectors.toList());
     }
 
     // Display all the departments where manager name of the department is 'Steven'
     public static List<Department> getAllDepartmentsWhichManagerFirstNameIsSteven() {
-        //TODO Implement the method
-        return new ArrayList<>();
+        return getAllDepartments().stream()
+                .filter(department -> department.getManager().getFirstName().equals("Steven"))
+                .collect(Collectors.toList());
     }
 
     // Display all the departments where postal code of the location of the department is '98199'
     public static List<Department> getAllDepartmentsWhereLocationPostalCodeIs98199() {
-        //TODO Implement the method
-        return new ArrayList<>();
+        return getAllDepartments().stream()
+                .filter(department -> department.getLocation().getPostalCode().equals("98199"))
+                .collect(Collectors.toList());
     }
 
     // Display the region of the IT department
     public static Region getRegionOfITDepartment() throws Exception {
-        //TODO Implement the method
-        return new Region();
+        return getAllDepartments().stream()
+                .filter(department -> department.getDepartmentName().equals("IT"))
+                .map(department -> department.getLocation().getCountry().getRegion() )
+                .findFirst().orElseThrow(()-> new Exception("Departemnt not found!"));
     }
 
     // Display all the departments where the region of department is 'Europe'
     public static List<Department> getAllDepartmentsWhereRegionOfCountryIsEurope() {
-        //TODO Implement the method
-        return new ArrayList<>();
+        return getAllDepartments().stream()
+                .filter(department -> department.getLocation().getCountry().getRegion().equals("Europe"))
+                .collect(Collectors.toList());
     }
 
     // Display if there is any employee with salary less than 1000. If there is none, the method should return true
     public static boolean checkIfThereIsNoSalaryLessThan1000() {
-        //TODO Implement the method
-        return false;
+        return getAllEmployees().stream()
+                .anyMatch(employee -> employee.getSalary() < 1000);
     }
 
     // Check if the salaries of all the employees in IT department are greater than 2000 (departmentName: IT)
