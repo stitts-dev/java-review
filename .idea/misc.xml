@@ -9,6 +9,10 @@
         <option value="$USER_HOME$/GitHubProjects/java-review/collection-review/pom.xml" />
         <option value="$PROJECT_DIR$/collection-review/pom.xml" />
         <option value="$PROJECT_DIR$/streams/pom.xml" />
+        <option value="$PROJECT_DIR$/lambda/pom.xml" />
+        <option value="$PROJECT_DIR$/generics/pom.xml" />
+        <option value="$PROJECT_DIR$/streams-practice/pom.xml" />
+        <option value="$PROJECT_DIR$/bank-simulation-app/pom.xml" />
       </list>
     </option>
   </component>
